@@ -72,17 +72,15 @@
           <i class="ion-heart"></i>
           &nbsp; Favorite Article <span class="counter">(29)</span>
         </button>
-        <button class="btn btn-sm btn-outline-secondary">
+        <%= link_to edit_home_path(@article.id) do %>
+          <button class="btn btn-sm btn-outline-secondary">
           <i class="ion-edit"></i> Edit Article
         </button>
-        <%= link_to edit_home_path(@article.id) do %>
-          aaa
         <% end %>
-         <button class="btn btn-sm btn-outline-danger">
+        <%= link_to home_path(@article.id), data: { turbo_method: :delete , turbo_confirm: '本当に削除していいですか?' } do %>
+          <button class="btn btn-sm btn-outline-danger">
           <i class="ion-trash-a"></i> Delete Article
         </button>
-        <%= link_to home_path(@article.id), data: { turbo_method: :delete , turbo_confirm: '本当に削除していいですか?' } do %>
-          aaa
         <% end %>
       </div>
     </div>
@@ -97,10 +95,6 @@
             <button class="btn btn-sm btn-primary">Post Comment</button>
           </div>
         </form>
-
-        
-
-        
         </div>
       </div>
     </div>
